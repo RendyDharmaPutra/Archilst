@@ -1,0 +1,81 @@
+<div class="contaciner mt-3">
+  <div class="row">
+    <div class="col-md-6">
+      <a onclick="history.back()" class="btn btn-secondary">&laquo; Kembali</a>
+      <h2>Add Contact Page</h2>
+
+      <% if (typeof errors != 'undefined') { %>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% errors.forEach(err => { %>
+          <li><%= err.msg %></li>
+          <% }) %>
+        </ul>
+      </div>
+      <% } %>
+
+      <form method="post" action="<%= action %>">
+        <% if (edit) { %>
+        <input type="hidden" name="_id" value="<%= contact._id %>" />
+        <input type="hidden" name="oldNama" value="<%= contact.oldNama || contact.nama %>" />
+        <% } %>
+        <div class="mb-3">
+          <% if (edit) { %>
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="nama" name="nama" value="<%= contact.nama %>" required />
+          <% } else { %>
+          <label for="nama" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="nama" name="nama" required />
+          <% } %>
+        </div>
+        <div class="mb-3">
+          <% if (edit) { %>
+          <label for="nim" class="form-label">Nomor Induk Mahasiswa (NIM)</label>
+          <input type="text" class="form-control" id="nim" name="nim" value="<%= contact.nim %>" required />
+          <% } else { %>
+          <label for="nim" class="form-label">Nomor Induk Mahasiswa (NIM)</label>
+          <input type="text" class="form-control" id="nim" name="nim" required />
+          <% } %>
+        </div>
+        <div class="mb-3">
+          <% if (edit) { %>
+          <label for="prodi" class="form-label">Prodi</label>
+          <input type="text" class="form-control" id="prodi" name="prodi" value="<%= contact.prodi %>" required />
+          <% } else { %>
+          <label for="prodi" class="form-label">Prodi</label>
+          <input type="text" class="form-control" id="prodi" name="prodi" required />
+          <% } %>
+        </div>
+        <div class="mb-3">
+          <% if (edit) { %>
+          <label for="kampus" class="form-label">Kampus</label>
+          <input type="text" class="form-control" id="kampus" name="kampus" value="<%= contact.kampus %>" required />
+          <% } else { %>
+          <label for="kampus" class="form-label">Kampus</label>
+          <input type="text" class="form-control" id="kampus" name="kampus" required />
+          <% } %>
+        </div>
+        <div class="mb-3">
+          <% if (edit) { %>
+          <label for="email" class="form-label">Alamat Email</label>
+          <input type="email" class="form-control" id="email" name="email" value="<%= contact.email %>" required />
+          <% } else { %>
+          <label for="email" class="form-label">Alamat Email</label>
+          <input type="email" class="form-control" id="email" name="email" required />
+          <% } %>
+        </div>
+        <div class="mb-3">
+          <% if (edit) { %>
+          <label for="noHP" class="form-label">Nomor HP</label>
+          <input type="text" class="form-control" id="noHP" name="noHP" value="<%= contact.noHP %>" required />
+          <% } else { %>
+          <label for="noHP" class="form-label">Nomor HP</label>
+          <input type="text" class="form-control" id="noHP" name="noHP" required />
+          <% } %>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Kirim Data</button>
+      </form>
+    </div>
+  </div>
+</div>

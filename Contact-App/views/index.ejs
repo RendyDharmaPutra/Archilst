@@ -1,0 +1,33 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/product">Product</a></li>
+      </ul>
+    </h3> -->
+<h1>Home Page</h1>
+<% // const nama = `Ntet Bau ketek` %>
+<h1>Nama saya <%= nama %></h1>
+<h1>Daftar Mahasiswa :</h1>
+<!-- Pengkondisian dan Pengulangan dengan EJS -->
+<% if (mhs.length == 0) { %>
+<h2>Data Mahasiswa masih kosong</h2>
+<% } else { %> <% mhs.forEach(m => { %>
+<ul>
+  <li>nama: <%= m.nama %></li>
+  <li>nim: <%= m.nim %></li>
+  <li>prodi: <%= m.prodi %></li>
+</ul>
+<% })} %>
+<!-- </body>
+</html> -->

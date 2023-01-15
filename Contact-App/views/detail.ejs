@@ -1,0 +1,51 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Detail Kontak</h2>
+      <% if (!contact) { %>
+      <div class="alert alert-danger fw-bold" role="alert">
+        Data Mahasiswa masih kosong <br />
+        <a href="/contact" class="alert-link fw-normal">&laquo; Kembali</a>
+      </div>
+      <% } else { %>
+      <!-- <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title"><%= contact.nama %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= contact.nim %></h6>
+          <h6 class="card-subtitle mb-2 text-muted"><%= contact.prodi %></h6>
+          <p class="card-text"><%= contact.noHP %></p>
+          <p class="card-text"><%= contact.email %></p>
+          <a href="/contact/edit/<%= contact.nama %>" class="btn btn-info badge">Ubah</a>
+          <a href="/contact/delete/<%= contact.nama %>" class="btn btn-danger badge" onclick="return confirm('Yakin?');">Hapus</a>
+          <form action="/contact?_method=DELETE" method="POST" class="d-inline">
+            <input type="hidden" name="nama" value="<%= contact.nama %>" />
+            <button type="submit" onclick="return confirm('Yakin?');" class="btn btn-danger badge">Hapus</button>
+          </form>
+          <a href="/contact" class="btn btn-secondary d-block mt-3">&laquo; Kembali</a>
+        </div> -->
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= contact.nama %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= contact.nim %></h6>
+            <h6 class="card-subtitle mb-2 text-muted"><%= contact.prodi %></h>
+            <h6 class="card-subtitle mb-2 text-muted"><%= contact.kampus %></h>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= contact.email %></li>
+            <li class="list-group-item"><%= contact.noHP %></li>
+          </ul>
+          <div class="card-body d-flex justify-content-between flex-wrap">
+            <a href="/contact/edit/<%= contact.nama %>" class="btn btn-info" style="width: 45%;">Ubah</a>
+            <form action="/contact?_method=DELETE" method="POST" style="width: 45%;">
+              <input type="hidden" name="nama" value="<%= contact.nama %>" />
+              <button type="submit" onclick="return confirm('Yakin?');" class="btn btn-danger" style="width: 100%;">Hapus</button>
+            </form>
+            <!-- <a href="#" class="btn btn-danger" style="width: 45%;">Hapus</a> -->
+            <a onclick="history.back()" class="btn btn-secondary mt-3" style="width: 100%;">Kembali</a>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
